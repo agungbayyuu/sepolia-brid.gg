@@ -1,0 +1,61 @@
+// Fungsi untuk menunggu selama ms milidetik
+function waitFor(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+// Fungsi utama yang menjalankan semua langkah
+async function runScript() {
+  for (let i = 0; i < 50; i++) {
+    console.log(`Iteration ${i + 1}`);
+
+    // Nomer 1
+    const confirmButton1 = document.querySelector('button[data-test="confirm-button"]');
+    if (confirmButton1) {
+      confirmButton1.click();
+    }
+    await waitFor(1000); // Delay 1 detik
+
+	// nomer 2
+
+	// Temukan elemen tombol dengan atribut data-test yang diberikan
+	const confirmWarningButton = document.querySelector('button[data-test="confirm-warning-button"]');
+
+	// Pastikan elemen tombol ditemukan
+	if (confirmWarningButton) {
+  	// Klik elemen tombol
+  	confirmWarningButton.click();
+	}
+	await waitFor(1000);
+
+    // Nomer 3
+    const checkboxWrapper = document.querySelector('.MuiButtonBase-root.MuiCheckbox-root.MuiCheckbox-colorPrimary.MuiCheckbox-sizeMedium.PrivateSwitchBase-root.MuiCheckbox-root.MuiCheckbox-colorPrimary.MuiCheckbox-sizeMedium.MuiCheckbox-root.MuiCheckbox-colorPrimary.MuiCheckbox-sizeMedium.css-yqibff');
+    if (checkboxWrapper) {
+      checkboxWrapper.click();
+    }
+    await waitFor(1000); // Delay 1 detik
+
+    // Nomer 4
+    const confirmButton2 = document.querySelector('button[data-test="confirm-review-button"]');
+    if (confirmButton2) {
+      confirmButton2.click();
+    }
+    await waitFor(1000); // Delay 1 detik
+
+    // Nomer 5
+    const confirmAttentionButton = document.querySelector('button[data-test="confirm-attention-button"]');
+    if (confirmAttentionButton) {
+      confirmAttentionButton.click();
+    }
+    await waitFor(1000); // Delay 1 detik
+
+    // Nomer 6
+    const closeButton = document.querySelector('.MuiButtonBase-root.MuiIconButton-root.MuiIconButton-sizeMedium.close-button.css-129wa2u');
+    if (closeButton) {
+      closeButton.click();
+    }
+    await waitFor(1000); // Delay 1 detik
+  }
+}
+
+// Menjalankan fungsi utama
+runScript();
